@@ -17,7 +17,7 @@ The task tests some data engineering (understanding and querying data mainly), b
 
 3) Open apis.py in your preferred IDE and run it.
 
-You can provide input directly to the Python terminal.
+4) copy the link and paste it into your browser
 	
 ## Form
 
