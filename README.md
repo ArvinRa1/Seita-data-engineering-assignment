@@ -15,7 +15,7 @@ The task tests some data engineering (understanding and querying data mainly), b
 
 	pip install -r requirements.txt
 
-3) Open main.py in your preferred IDE and run it.
+3) Open apis.py in your preferred IDE and run it.
 
 You can provide input directly to the Python terminal.
 	

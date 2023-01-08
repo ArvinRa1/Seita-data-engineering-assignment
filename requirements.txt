@@ -1,8 +1,6 @@
 # This file may be used to create an environment using:
 # $ conda create --name <env> --file <this file>
 # platform: osx-64
-anyio=3.5.0=py37hecd8cb5_0
-appnope=0.1.2=py37hecd8cb5_1001
 argon2-cffi=21.3.0=pyhd3eb1b0_0
 argon2-cffi-bindings=21.2.0=py37hca72f7f_0
 attrs=22.1.0=py37hecd8cb5_0
@@ -17,12 +15,19 @@ ca-certificates=2022.10.11=hecd8cb5_0
 certifi=2022.12.7=py37hecd8cb5_0
 cffi=1.15.1=py37h6c40b1e_3
 charset-normalizer=2.0.4=pyhd3eb1b0_0
+click=8.1.3=pypi_0
 cryptography=38.0.1=py37hf6deb26_0
+dash=2.7.1=pypi_0
+dash-bootstrap-components=1.3.0=pypi_0
+dash-core-components=2.0.0=pypi_0
+dash-html-components=2.0.0=pypi_0
+dash-table=5.0.0=pypi_0
 datetime=4.9=pypi_0
 debugpy=1.5.1=py37he9d5cce_0
 decorator=5.1.1=pyhd3eb1b0_0
 defusedxml=0.7.1=pyhd3eb1b0_0
 entrypoints=0.4=py37hecd8cb5_0
+flask=2.2.2=pypi_0
 flit-core=3.6.0=pyhd3eb1b0_0
 gettext=0.21.0=h7535e17_0
 giflib=5.2.1=haf1e3a3_0
@@ -39,6 +44,7 @@ ipykernel=6.15.2=py37hecd8cb5_0
 ipython=7.31.1=py37hecd8cb5_1
 ipython_genutils=0.2.0=pyhd3eb1b0_1
 ipywidgets=7.6.5=pyhd3eb1b0_1
+itsdangerous=2.1.2=pypi_0
 jedi=0.18.1=py37hecd8cb5_1
 jinja2=3.1.2=py37hecd8cb5_0
 jpeg=9e=hca72f7f_0
@@ -103,6 +109,7 @@ pexpect=4.8.0=pyhd3eb1b0_3
 pickleshare=0.7.5=pyhd3eb1b0_1003
 pip=22.3.1=py37hecd8cb5_0
 pkgutil-resolve-name=1.3.10=py37hecd8cb5_0
+plotly=5.11.0=pypi_0
 ply=3.11=py37_0
 prometheus_client=0.14.1=py37hecd8cb5_0
 prompt-toolkit=3.0.36=py37hecd8cb5_0
@@ -135,6 +142,7 @@ six=1.16.0=pyhd3eb1b0_1
 sniffio=1.2.0=py37hecd8cb5_1
 soupsieve=2.3.2.post1=py37hecd8cb5_0
 sqlite=3.40.0=h880c91c_0
+tenacity=8.1.0=pypi_0
 terminado=0.17.1=py37hecd8cb5_0
 tinycss2=1.2.1=py37hecd8cb5_0
 tk=8.6.12=h5d9f67b_0
@@ -148,6 +156,7 @@ urllib3=1.26.13=py37hecd8cb5_0
 wcwidth=0.2.5=pyhd3eb1b0_0
 webencodings=0.5.1=py37_1
 websocket-client=0.58.0=py37hecd8cb5_4
+werkzeug=2.2.2=pypi_0
 wheel=0.37.1=pyhd3eb1b0_0
 widgetsnbextension=3.5.2=py37hecd8cb5_0
 xz=5.2.8=h6c40b1e_0
