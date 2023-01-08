@@ -6,6 +6,19 @@ This task hopefully takes not more than half a day. What we really want is to di
 
 The task tests some data engineering (understanding and querying data mainly), but as we build software that runs in the wild on a daily basis, and we do that in a team, it also tests your software engineering skills.
 
+
+# Using the app
+
+1) Clone the github repository. 
+
+2) install the requirements file 
+
+	pip install -r requirements.txt
+
+3) Open main.py in your preferred IDE and run it.
+
+You can provide input directly to the Python terminal.
+	
 ## Form
 
 We'd like you to put your code in a git repository on the web. This can be Github, Gitlab or Bitbucket etc.
