@@ -13,32 +13,6 @@ categories = ["observation_time", "temperature", "wind_speed", "precip", "humidi
               "cloudcover", "feelslike", "uv_index", "visibility"]
 
 
-# def update_weather():
-#     weather_requests = requests.get(
-#         "http://api.weatherstack.com/current?access_key=88ffb416536794b25ea52f6e9a6c6c28&query=New%20York"
-#     )
-#     json_data = weather_requests.json()
-#     df = pd.DataFrame(json_data)
-#     print(df.columns)
-#     print(df[:20])
-#     return ([
-#         html.Table(
-#             className='table-weather',
-#             children=[
-#                 html.Tr(
-#                     children=[
-#                         html.Td(
-#                             children=[
-#                                 name + ": " + str(data)
-#                             ]
-#                         )
-#                     ]
-#                 )
-#                 for name, data in zip(categories, df['current'][categories])
-#             ])
-#     ])
-
-
 df = pd.read_csv("weather.csv")
 df.event_start = pd.to_datetime(df.event_start).dt.tz_localize(None)
 df.belief_horizon_in_sec = pd.to_timedelta(df.belief_horizon_in_sec, unit='s')
@@ -113,16 +87,6 @@ app.layout = html.Div([
         ],
         style={"text-align": "center", "padding": "20px 0px"}
     ),
-
-    # dcc.Interval(
-    #             id='my_interval',
-    #             disabled=False,     #if True the counter will no longer update
-    #             n_intervals=0,      #number of times the interval has passed
-    #             interval=300*1000,  #increment the counter n_intervals every 5 minutes
-    #             max_intervals=100,  #number of times the interval will be fired.
-    #                                 #if -1, then the interval has no limit (the default)
-    #                                 #and if 0 then the interval stops running.
-    # ),
 
     html.Div([
         dcc.Markdown('''We are testing get forecasts'''),
