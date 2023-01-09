@@ -1,10 +1,8 @@
-import pandas as pd  # (version 1.0.0)
-
+# import pandas as pd  # (version 1.0.0)
 import dash  # (version 1.9.1) pip install dash==1.9.1
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
-import requests
 import pandas as pd
 from datetime import datetime, timedelta
 
@@ -15,30 +13,30 @@ categories = ["observation_time", "temperature", "wind_speed", "precip", "humidi
               "cloudcover", "feelslike", "uv_index", "visibility"]
 
 
-def update_weather():
-    weather_requests = requests.get(
-        "http://api.weatherstack.com/current?access_key=88ffb416536794b25ea52f6e9a6c6c28&query=New%20York"
-    )
-    json_data = weather_requests.json()
-    df = pd.DataFrame(json_data)
-    print(df.columns)
-    print(df[:20])
-    return ([
-        html.Table(
-            className='table-weather',
-            children=[
-                html.Tr(
-                    children=[
-                        html.Td(
-                            children=[
-                                name + ": " + str(data)
-                            ]
-                        )
-                    ]
-                )
-                for name, data in zip(categories, df['current'][categories])
-            ])
-    ])
+# def update_weather():
+#     weather_requests = requests.get(
+#         "http://api.weatherstack.com/current?access_key=88ffb416536794b25ea52f6e9a6c6c28&query=New%20York"
+#     )
+#     json_data = weather_requests.json()
+#     df = pd.DataFrame(json_data)
+#     print(df.columns)
+#     print(df[:20])
+#     return ([
+#         html.Table(
+#             className='table-weather',
+#             children=[
+#                 html.Tr(
+#                     children=[
+#                         html.Td(
+#                             children=[
+#                                 name + ": " + str(data)
+#                             ]
+#                         )
+#                     ]
+#                 )
+#                 for name, data in zip(categories, df['current'][categories])
+#             ])
+#     ])
 
 
 df = pd.read_csv("weather.csv")
