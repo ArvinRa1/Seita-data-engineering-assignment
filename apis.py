@@ -1,7 +1,9 @@
 # import pandas as pd  # (version 1.0.0)
 import dash  # (version 1.9.1) pip install dash==1.9.1
-import dash_core_components as dcc
-import dash_html_components as html
+# import dash_core_components as dcc
+from dash import dcc
+# import dash_html_components as html
+from dash import html
 from dash.dependencies import Input, Output
 import pandas as pd
 from datetime import datetime, timedelta
@@ -11,7 +13,6 @@ app = dash.Dash(__name__)
 # -------------------------------------------------------------------------------
 categories = ["observation_time", "temperature", "wind_speed", "precip", "humidity",
               "cloudcover", "feelslike", "uv_index", "visibility"]
-
 
 df = pd.read_csv("weather.csv")
 df.event_start = pd.to_datetime(df.event_start).dt.tz_localize(None)
@@ -40,6 +41,7 @@ def getForcasts(df, now, then):
         thenSlice = nowSlice.loc[nowSlice.belief_horizon_in_sec.isin(dates)]
     if thenSlice.empty:
         return "For the date given we do not have information for tomorrow please try another date"
+    thenSlice = thenSlice.loc[thenSlice.event_start == thenSlice.event_start.max()]
     output = [i[0] + ": " + str(i[1]) + "\n" for i in zip(thenSlice.sensor, thenSlice.event_value)]
     return output
 
@@ -101,6 +103,11 @@ app.layout = html.Div([
 
     html.Div(children=[
         dcc.Markdown('''We are testing get Tomorrow'''),
+        dcc.Markdown("""If the mean of wind (sustained) speed is more than 11 m\s then it is windy
+
+After light investigation more than 100 irradiance is considered sunny.
+
+An average of more than 20 degrees C is considered warm"""),
         dcc.Markdown('''Please put dates in the format '%Y-%m-%d %H:%M:%S' or press enter for default value'''),
         dcc.Input(id="input3", type="text", value="2021-07-01 20:00:00", debounce=True),
         html.Div(id="output2"),
